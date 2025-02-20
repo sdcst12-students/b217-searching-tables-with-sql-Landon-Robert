@@ -1,6 +1,5 @@
 import sqlite3
 
-
 ids = []
 connection = sqlite3.connect('dbase.db')
 cursor = connection.cursor()
@@ -18,18 +17,13 @@ result = cursor.fetchall()
 #q = "select * from npc where gold>30 and (class = 'Ranger' or class='Samurai')"
 #q = "select id,class,level from npc where gold>50"
 #q = "select id from npc where gold>50"
+
+#1
 cursor.execute(q)
 result = cursor.fetchall()
-print(f"There are {len(result)} results")
-input("Press ENTER to see all results")
 for i in result:
     print(i)
-    ids.append(i[0])
-print("\nID's of search results")
-print(ids)
 
-for i in ids:
-    q = f"select * from npc where id={i}"
-    cursor.execute(q)
-    result = cursor.fetchone()
-    print(result)
+print("1. " + 'pragma table_info(npc);')
+
+#2
